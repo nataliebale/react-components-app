@@ -28,9 +28,16 @@ function SpeakerImage({id, first, last}) {
 }
 
 function SpeakerFavorite({ favorite, onFavoriteToggle }) {
+
+  function doneCallback(){
+    console.log(22222222222, new Date().getMilliseconds());
+  }
+
   return (
     <div className="action padB1">
-      <span onClick={onFavoriteToggle}>
+      <span onClick={function (){
+        return onFavoriteToggle(doneCallback);
+      }}>
         <i className={
           favorite === true ?
             "fa fa-star orange" : "fa fa-star-o orange"
