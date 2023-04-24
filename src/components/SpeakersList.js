@@ -3,7 +3,7 @@ import ReactPlaceholder from "react-placeholder";
 import useRequestDelay, { REQUEST_STATUS } from "../hooks/useRequestDelay";
 import { data } from "../../SpeakerData";
 
-function SpeakersList({ showSessions }) {
+function SpeakersList( ) {
 
   const {
     data: speakersData, requestStatus, error, updateRecord
@@ -16,8 +16,6 @@ function SpeakersList({ showSessions }) {
       </div>
     );
   }
-
-  // if(isLoading === true) return <div className="container">Loading...</div>
 
   return (
     <div className="container speakers-list">
@@ -33,7 +31,6 @@ function SpeakersList({ showSessions }) {
             <Speaker
               key={speaker.id}
               speaker={speaker}
-              showSessions={showSessions}
               onFavoriteToggle={(doneCallback) => {
                 updateRecord({
                   ...speaker,
